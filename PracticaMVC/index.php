@@ -6,7 +6,11 @@
 	 */
 
 	 if(isset($_GET['ctrl'])){
-	 	$controlador=null;
+	 	
+		if(preg_match('/^[a-z]+$/',$_GET['ctrl'])===0)
+			die("Ctrl Rechazado!");
+		
+	 	$controlador=null; 
 		switch($_GET['ctrl']){
 			case 'alumno':
 				require('controladores\CtrlAlumno.php');

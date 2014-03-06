@@ -18,6 +18,9 @@
 		 * Metodo que ejecuta las peticiones de usuarios
 		 */
 		function ejecutar(){
+			if(preg_match('/^[a-z]+$/',$_GET['act'])===0)
+				die("Act Rechazado!");
+			
 			if(isset($_GET['act'])){
 				switch ($_GET['act']) {
 					case 'alta':
@@ -41,6 +44,10 @@
 		 */
 		function listar(){
 			require('vistas/viewALumnosLista.php');
+			
+			if(preg_match('/^[a-zA-Z]+[0-9]{4}\-[dD]{1}[0-9]{2}$/',$_GET['curso'])===0)
+				die("Curso Rechazado!");
+			
 			if(isset($_GET['curso'])){
 				$resultLista=$this->modelo->listaPorCurso($_GET['curso']);
 			}else{

@@ -27,5 +27,13 @@
 				);
 			return $arreglo;
 		}
+		
+		/**
+		 * Ordena el arreglo de los alumnos
+		 */
+		function ordenaAlumnos($arreglo){
+			sort($arreglo['alumnos']);
+			return $arreglo;
+		}
 	}
 ?>
