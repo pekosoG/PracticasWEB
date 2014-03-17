@@ -35,5 +35,13 @@
 			sort($arreglo['alumnos']);
 			return $arreglo;
 		}
+		
+		/**
+		 * Funcion encargada de agregar el contenido a la BD
+		 */
+		function altaAlumno($alumno){
+			echo 'Alumno a dar de alta</br>';
+			var_dump($alumno);
+		}
 	}
 ?>
